@@ -91,7 +91,7 @@ class Faq {
                 'show_in_nav_menus'   => true,
                 'show_in_admin_bar'   => true,
                 'menu_position'       => 7,
-                'menu_icon'           => 'dashicons-slides',
+                'menu_icon'           => 'dashicons-admin-page',
                 'can_export'          => true,
                 'has_archive'         => false,
                 'exclude_from_search' => false,
@@ -104,11 +104,8 @@ class Faq {
 
         } // add_file_meta_box
 
-
     } // add_file_meta_box
 
-
-
-} // end class
+}
 
 $GLOBALS['faq'] = new Faq();
