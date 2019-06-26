@@ -8,52 +8,53 @@
 **/
 
 
-if( ! defined( 'FAQ_VERSION' ) ) {
-    define( 'FAQ_VERSION', 1.0 );
+if (! defined('FAQ_VERSION')) {
+    define('FAQ_VERSION', 1.0);
 } // end if
 
-class Faq {
+class Faq
+{
 
 
         /* --------------------------------------------
          * Attributes
          -------------------------------------------- */
 
-       // Represents the nonce value used to save the post media
-         private $nonce = 'wp_faq_nonce';
-         private $singular_label = "FAQ";
-         private $plural_label = "FAQs";
+    // Represents the nonce value used to save the post media
+    private $nonce = 'wp_faq_nonce';
+    private $singular_label = "FAQ";
+    private $plural_label = "FAQs";
 
 
-        /* --------------------------------------------
-         * Constructor
-         -------------------------------------------- */
+    /* --------------------------------------------
+     * Constructor
+     -------------------------------------------- */
 
-         /**
-          * Initializes localiztion, sets up JavaScript, and displays the meta box for saving the file
-          * information.
-          */
-         public function __construct() {
+    /**
+     * Initializes localiztion, sets up JavaScript, and displays the meta box for saving the file
+     * information.
+     */
+    public function __construct()
+    {
 
             // Setup the meta box hooks
-        add_action( 'init', array($this, 'create_cpt') );
+        add_action('init', array($this, 'create_cpt'));
+    } // end construct
 
-         } // end construct
-
-        /* --------------------------------------------
-         * Localization, Styles, and JavaScript
-         -------------------------------------------- */
+    /* --------------------------------------------
+     * Localization, Styles, and JavaScript
+     -------------------------------------------- */
 
 
-        /* --------------------------------------------
-         * Hooks
-         -------------------------------------------- */
+    /* --------------------------------------------
+     * Hooks
+     -------------------------------------------- */
 
-        /**
-         * Introduces the file meta box for uploading the file to this post.
-         */
-        public function create_cpt() {
-
+    /**
+     * Introduces the file meta box for uploading the file to this post.
+     */
+    public function create_cpt()
+    {
         $theme = "estpal";
         // Set UI labels for Custom Post Type
         $labels = array(
@@ -101,11 +102,7 @@ class Faq {
 
         // Registering your Custom Post Type
         register_post_type('faqs', $args);
-
-        } // add_file_meta_box
-
     } // add_file_meta_box
-
-}
+} // add_file_meta_box
 
 $GLOBALS['faq'] = new Faq();
