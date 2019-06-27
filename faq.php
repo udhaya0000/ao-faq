@@ -80,7 +80,7 @@ class Faq
                 'description'         => __('List of '.$this->plural_label, $theme),
                 'labels'              => $labels,
                 // Testimonials this CPT supports in Post Editor
-                'supports'            => array('title', 'revisions'),
+                'supports'            => array('title', 'editor', 'revisions'),
                 /* A hierarchical CPT is like Pages and can have
                 * Parent and child items. A non-hierarchical CPT
                 * is like Posts.
